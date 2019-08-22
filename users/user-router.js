@@ -16,7 +16,7 @@ router.get("/users", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-  let { username } = req.body;
+  let { username } = req.headers;
 
   const loggedIn = await Users.findUserBy({ username }).first();
   try {
